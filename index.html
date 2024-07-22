@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Comments Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Comments Downloader</h1>
+        <form id="commentForm">
+            <label for="videoId">Enter YouTube Video ID:</label>
+            <input type="text" id="videoId" name="videoId" required>
+            <button type="submit">Download Comments</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const videoId = document.getElementById('videoId').value;
+            window.location.href = `/download?videoId=${videoId}`;
+        });
+    </script>
+</body>
+</html>
